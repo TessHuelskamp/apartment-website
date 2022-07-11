@@ -16,7 +16,7 @@
 
 
 body {
-    background-image: url("building-view.jpg");
+    background-image: url("/assets/building-view.jpg");
     background-color: grey;
 }
 
