@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+    background-image: url("building-view.jpg");
+    background-color: grey;
+}
+
+.disclaimer {
+    font-style: italic;
+}
+
+.status {
+    background-color: yellow;
+}
+
+.block,
+.facebook {
+    margin: auto;
+    width: 400px;
+    padding: 10px;
+    margin: auto;
+}
+
+.facebook {
+    background-color: grey;
+}
+
+.post {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+.author {
+    color: grey;
+    font-style: italic;
+    font-size-adjust: .5;
+    text-align: right;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

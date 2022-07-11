@@ -4,6 +4,7 @@ class MainController < ApplicationController
 
   def index
     @top_status = Status.last
+    @last_ten_statuses = Status.order('created_at DESC').limit(10)
   end
 
   def add_status

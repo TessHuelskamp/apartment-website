@@ -1,3 +1,39 @@
 
-<p><%= @top_status.message %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Is the building on fire?</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>    
+    <div class="disclaimer block">
+    This is a satirical website. If the fire alarms go off at 2am, please exit the building <b>before</b> checking this page</p>
+    </div>
+    <div class="flexbox">
+       
+
+        <div class="status block">
+            The building is <b>not</b> currently on fire.
+        </div>
+
+        <div class="facebook">
+            Don't trust this website? Check out what our residents have to say!
+            <% @last_ten_statuses.each do |status| %>
+                <div class="post">
+                    <%= status.message%>
+                    <div class="author">
+                        <%= status.author.present? ? status.author.chr : "Anonymous" %> 
+                        -
+                        <%= status.nice_timestamp %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+  </body>
+</html>
