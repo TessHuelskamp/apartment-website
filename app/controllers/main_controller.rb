@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class MainController < ApplicationController
+class MainController < ActionController::Base
   skip_before_action :verify_authenticity_token
 
   def index
