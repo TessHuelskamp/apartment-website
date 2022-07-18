@@ -1,4 +1,5 @@
-# I'm just putting this comment here so I wont get rubo-cop'd
+# frozen_string_literal: true
+
 class MainController < ApplicationController
   skip_before_action :verify_authenticity_token
 
@@ -7,6 +8,7 @@ class MainController < ApplicationController
     @last_ten_statuses = Status.order('created_at DESC').limit(10)
   end
 
+  # rubocop:disable Metrics/MethodLength
   def add_status
     expected_key = Key.last.key
     key = params[:key]
@@ -24,4 +26,5 @@ class MainController < ApplicationController
       render json: {}, status: 422
     end
   end
+  # rubocop:enable Metrics/MethodLength
 end
