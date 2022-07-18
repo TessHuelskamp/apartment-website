@@ -31,7 +31,7 @@ body {
 .block,
 .facebook {
     margin: auto;
-    width: 400px;
+    max-width: 400px;
     padding: 10px;
     margin: auto;
 }
