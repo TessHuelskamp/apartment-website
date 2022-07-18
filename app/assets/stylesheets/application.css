@@ -29,14 +29,23 @@ body {
 }
 
 .block,
-.facebook {
+.posts {
     margin: auto;
     max-width: 400px;
     padding: 10px;
     margin: auto;
 }
 
-.facebook {
+.warning {
+    background-color: yellow;
+    color: red;
+}
+
+.allclear {
+    color: green;
+}
+
+.posts {
     background-color: grey;
 }
 

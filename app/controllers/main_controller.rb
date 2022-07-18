@@ -6,6 +6,7 @@ class MainController < ActionController::Base
   def index
     @top_status = Status.last
     @last_ten_statuses = Status.order('created_at DESC').limit(10)
+    @is_the_building_on_fire = @top_status.message.downcase.include?('fire')
   end
 
   # rubocop:disable Metrics/MethodLength
