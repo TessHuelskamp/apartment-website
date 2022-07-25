@@ -18,8 +18,9 @@ class MainController < ActionController::Base
 
     message = params[:message]
     author = params[:author]
+    media = params[:media]
 
-    s = Status.new(message: message, author: author)
+    s = Status.new(message: message, author: author, media: media)
 
     if s.save
       render json: {}, status: 200

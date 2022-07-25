@@ -31,8 +31,10 @@
                     <% @last_ten_statuses.each do |status| %>
                         <div class="post">
                             <%= status.message%>
+                            <% if status.media.present? %>
+                                <img src="<%= status.media %>"/>
                             <div class="author">
-                                <%= status.author.present? ? status.author.chr : "Anonymous" %> 
+                                <%= status.author.present? ? status.author : "Anonymous" %> 
                                 -
                                 <%= status.nice_timestamp %>
                             </div>
