@@ -49,6 +49,7 @@
                         <div class="post">
                             <%= status.message%>
                             <% if status.media.present? %>
+                                <br>
                                 <img src="<%= status.media %>"/>
                             <% end %>
                             <div class="author">
@@ -73,6 +74,6 @@
             The building <b>is not</b> currently on fire.
         </marquee>
     <% end %>
-    
+
   </body>
 </html>
