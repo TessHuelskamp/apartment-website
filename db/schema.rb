@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_11_025812) do
+ActiveRecord::Schema.define(version: 2022_08_03_034223) do
 
   create_table "keys", force: :cascade do |t|
     t.string "key"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_025812) do
     t.text "author"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "media"
   end
 
 end
