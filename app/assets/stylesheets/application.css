@@ -26,6 +26,8 @@ body {
 
 .status {
     background-color: yellow;
+    width: 400px;
+    text-align: center;
 }
 
 .block,
@@ -37,7 +39,6 @@ body {
 }
 
 .warning {
-    background-color: yellow;
     color: red;
 }
 
@@ -66,4 +67,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+
+img {
+    max-width: 350px;
+    max-height: 350px;
 }

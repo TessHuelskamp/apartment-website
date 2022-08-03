@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>Is the building on fire?</title>
@@ -11,20 +12,36 @@
   </head>
 
   <body>
-    <marquee direction="right" behaviour="scroll" class="banner <%= @is_the_building_on_fire ? 'allclear' : 'warning' %>">
-        The building 
-        <b><%= @is_the_building_on_fire ? "is not" : "is" %></b>
-        currently on fire
-    </marquee>
+
+    <% if @is_the_building_on_fire %>
+        <marquee direction="right" behaviour="scroll" class="banner warning">
+            The building <b>might be</b> currently on fire.
+        </marquee>
+    <% else %>
+        <marquee direction="right" behaviour="scroll" class="banner allclear">
+            The building <b>is not</b> currently on fire.
+        </marquee>
+    <% end %>
+    
+  
+
     <div class="flexbox">
         <div class="newsfeed">
+
             <div class="disclaimer block">
                 This is a satirical website. If the fire alarms go off at 2am, please exit the building <b>before</b> checking this page</p>
             </div>
             <div class="flexbox">
-                <div class="status block">
-                    The building is <b>not</b> currently on fire.
-                </div>
+                <% if @is_the_building_on_fire %>
+                    <div class="status block warning">
+                        The building <b>might be </b> on fire.
+                    </div>
+                <% else %>
+                    <div class="status block allclear">
+                        The building is <b>not</b> currently on fire.
+                    </div>
+                <% end %>
+               
 
                 <div class="posts">
                     Don't trust this website? Check out what our residents have to say!
@@ -33,6 +50,7 @@
                             <%= status.message%>
                             <% if status.media.present? %>
                                 <img src="<%= status.media %>"/>
+                            <% end %>
                             <div class="author">
                                 <%= status.author.present? ? status.author : "Anonymous" %> 
                                 -
@@ -44,10 +62,17 @@
             </div>
         </div>
     </div>
-    <marquee direction="right" behaviour="scroll" class="banner <%= @is_the_building_on_fire ? 'allclear' : 'warning' %>">
-    The building 
-    <b><%= @is_the_building_on_fire ? "is not" : "is" %></b>
-    currently on fire
-    </marquee>
+    
+
+    <% if @is_the_building_on_fire %>
+        <marquee direction="right" behaviour="scroll" class="banner warning">
+            The building <b>might be</b> currently on fire.
+        </marquee>
+    <% else %>
+        <marquee direction="right" behaviour="scroll" class="banner allclear">
+            The building <b>is not</b> currently on fire.
+        </marquee>
+    <% end %>
+    
   </body>
 </html>
